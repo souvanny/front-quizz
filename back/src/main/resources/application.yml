@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    password: resosoc20!22
+    url: jdbc:mysql://localhost:3306/springquizz
+    username: resosoc
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  security:
+    oauth2:
+      client:
+        registration:
+         google:
+          clientId: 353507205090-npp7t75t4bmhqcvfshlcmumpu1pscgsh.apps.googleusercontent.com
+          clientSecret: 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
+          scope:
+           - email
+           - profile
