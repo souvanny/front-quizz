@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,12 +7,12 @@ import com.example.demo.config.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
-public class OauthLoginController {
+public class HomeController {
 
     @Autowired JwtTokenUtil jwtUtil;
 
-    @RequestMapping("/oauthlogin")
-    public ModelAndView oauthloginPage() {
+    @RequestMapping("/")
+    public ModelAndView homePage() {
 
         String accessToken = jwtUtil.generateAccessToken();
 
@@ -22,6 +22,6 @@ public class OauthLoginController {
         System.out.println("--");
 
         String message = "oauthlogin popipopipopipopipopi.";
-        return new ModelAndView("oauthloginPage", "message", message);
+        return new ModelAndView("homePage", "message", message);
     }
 }

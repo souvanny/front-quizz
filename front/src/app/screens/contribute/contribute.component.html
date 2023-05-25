@@ -1,51 +1,56 @@
-<h3>Ajouter une contribution</h3>
+<h3 class="page-title">Ajouter une contribution</h3>
 
-<h4>Questions</h4>
+<b>Questions</b>
 
-<div class="type-choices">
-  <div>Choix unique <input type="radio" [value]="'1'" [(ngModel)]="typeChoice" /></div>
-  <div>Choix multiples <input type="radio" [value]="'2'" [(ngModel)]="typeChoice" /></div>
+<br/>
+<br/>
+
+<div class="label-title">
+  Énoncé de la question
 </div>
 <div>
-  Question
-</div>
-<div>
-  <textarea cols="120" rows="7" [(ngModel)]="question"></textarea>
+  <textarea cols="120" rows="7" [(ngModel)]="question" class="code-input"></textarea>
 </div>
 
-<div>
+<div class="label-title">
   Hastags
 </div>
 <div>
-  <input size="100" [(ngModel)]="hashtags" />
+  <input size="100" [(ngModel)]="hashtags" class="code-input" />
 </div>
 
-<h4>Réponses</h4>
 
+<br/>
+<br/>
+
+<b>Réponses</b>
+
+<br/>
+<br/>
 
 <div *ngFor="let answer of answers; let i = index" class="answer">
   <div>Réponse {{ i + 1 }} : {{ answer.title }}</div>
   <div>
     Bonne réponse : <input type="checkbox" value="1" (click)="changeIsCorrect(i)" />
     |
-    <button (click)="upAnswer(i)">monter</button>
+    <button (click)="upAnswer(i)" class="button-grey">monter</button>
     |
-    <button (click)="downAnswer(i)">descendre</button>
+    <button (click)="downAnswer(i)" class="button-grey">descendre</button>
     |
-    <button (click)="deleteAnswer(i)">supprimer</button>
+    <button (click)="deleteAnswer(i)" class="button-grey">supprimer</button>
   </div>
 </div>
 
 
 <div class="new-answer">
-  <div><input type="text" size="50" [(ngModel)]="newAnswer" /></div>
+  <div><input type="text" size="50" [(ngModel)]="newAnswer" class="code-input" /></div>
   <div>
-    <button (click)="addAnswer()">Ajouter la réponse</button>
+    <button (click)="addAnswer()" class="button-grey">Ajouter la réponse</button>
   </div>
 </div>
 
 
 <div class="btn-validate-quizz">
-  <button (click)="validateQuizz()">Valider le quizz</button>
+  <button (click)="validateQuizz()" class="button-grey">Valider le quizz</button>
 </div>
 

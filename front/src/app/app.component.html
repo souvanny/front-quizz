@@ -1,39 +1,40 @@
-<div class="content" role="main">
+
+<nav id="topnav">
+
+  <h2>Bienvenue XXX</h2>
+  <a
+          [title]="'all-contributes'"
+          [routerLink]="['/all-contributes']"
+  >
+    Préférences
+  </a>
+
+
+</nav>
+
+<div id="menu" role="main">
 
   <a
     [title]="'all-contributes'"
     [routerLink]="['/all-contributes']"
   >
-    all-contributes
-  </a>
-  &nbsp;|&nbsp;
-  <a
-    [title]="'my-contributes'"
-    [routerLink]="['/my-contributes']"
-  >
-    my-contributes
+    Débuter un parcours
   </a>
   &nbsp;|&nbsp;
   <a
     [title]="'contribute'"
     [routerLink]="['/contribute']"
   >
-    contribute
+    Contribuer
   </a>
   &nbsp;|&nbsp;
   <a
-    [title]="'account'"
-    [routerLink]="['/account']"
+          [title]="'my-contributes'"
+          [routerLink]="['/my-contributes']"
   >
-    account
+    Mes questions
   </a>
-  &nbsp;|&nbsp;
-  <a
-    [title]="'account-edit'"
-    [routerLink]="['/account-edit']"
-  >
-    account-edit
-  </a>
+
 
 </div>
 

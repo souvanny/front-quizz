@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+nav#topnav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#menu {
+    margin-bottom: 20px;
+}
+a {
+  color: #FFF;
+}
+
+.page-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.label-title {
+    font-size: 12px;
+    margin-bottom: 10px;
+    color: #AAA;
+}
+
+.code-input {
+    background-color: #CCC;
+    color: #333;
+    padding: 10px;
+    border: 2px dashed #333;
+    font-size: 12px;
+    width: 100%;
+}
+
+.button-grey {
+    background-color: #082736;
+    color: #FFF;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+

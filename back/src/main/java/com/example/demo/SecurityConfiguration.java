@@ -36,6 +36,7 @@ public class SecurityConfiguration {
 
         http
                 .authorizeHttpRequests((requests) -> requests
+                        .requestMatchers(new AntPathRequestMatcher("/")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/oauthlogin")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/error")).permitAll()
                         .anyRequest().authenticated()
@@ -59,6 +60,7 @@ public class SecurityConfiguration {
 //                            userService.processOAuthPostLogin(oauthUser.getEmail());
 //
 //						response.sendRedirect("/list");
+						response.sendRedirect("/");
                         }
                     });
 
