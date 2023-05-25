@@ -28,18 +28,32 @@
 <br/>
 <br/>
 
-<div *ngFor="let answer of answers; let i = index" class="answer">
-  <div>Réponse {{ i + 1 }} : {{ answer.title }}</div>
-  <div>
-    Bonne réponse : <input type="checkbox" value="1" (click)="changeIsCorrect(i)" />
-    |
-    <button (click)="upAnswer(i)" class="button-grey">monter</button>
-    |
-    <button (click)="downAnswer(i)" class="button-grey">descendre</button>
-    |
-    <button (click)="deleteAnswer(i)" class="button-grey">supprimer</button>
-  </div>
-</div>
+<div id="no-answer" *ngIf="answers.length === 0">Veuillez saisir une réponse</div>
+<table id="answers-table" *ngIf="answers.length !== 0">
+  <thead>
+    <th>Num</th>
+    <th>Libellé</th>
+    <th>Bonne réponse</th>
+    <th class="actions">Actions</th>
+  </thead>
+  <tr *ngFor="let answer of answers; let i = index" class="answer">
+    <td>{{ i + 1 }}</td>
+    <td>{{ answer.title }}</td>
+    <td>
+      <input type="checkbox" value="1" (click)="changeIsCorrect(i)" />
+    </td>
+    <td class="actions">
+      <button (click)="upAnswer(i)" class="button-grey">monter</button>
+
+      <button (click)="downAnswer(i)" class="button-grey">descendre</button>
+
+      <button (click)="deleteAnswer(i)" class="button-grey">supprimer</button>
+    </td>
+  </tr>
+
+</table>
+
+
 
 
 <div class="new-answer">
@@ -51,6 +65,6 @@
 
 
 <div class="btn-validate-quizz">
-  <button (click)="validateQuizz()" class="button-grey">Valider le quizz</button>
+  <button (click)="validateQuizz()" class="button-grey">Valider la question</button>
 </div>
 

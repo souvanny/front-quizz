@@ -16,3 +16,30 @@
 .btn-validate-quizz {
   margin-top: 20px;
 }
+
+#answers-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+#answers-table th {
+
+}
+
+#answers-table th,
+#answers-table td {
+    font-size: 10px;
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+#answers-table th.actions,
+#answers-table td.actions {
+    text-align: right;
+}
+
+#no-answer {
+    font-size: 12px;
+    color: #CCC;
+    margin-bottom: 20px;
+}
