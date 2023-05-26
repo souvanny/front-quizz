@@ -17,3 +17,6 @@ spring:
           scope:
            - email
            - profile
+
+server:
+  port : 8081

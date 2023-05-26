@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './screens/home/home.component';
 import { ContributeComponent } from './screens/contribute/contribute.component';
 import { MyContributesComponent } from './screens/my-contributes/my-contributes.component';
 import { AllContributesComponent } from './screens/all-contributes/all-contributes.component';
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyContributesComponent,
     AllContributesComponent,
     AccountComponent,
-    AccountEditComponent
+    AccountEditComponent,
+    HomeComponent
 
   ],
   imports: [
@@ -28,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: 'home', component: HomeComponent },
       { path: 'all-contributes', component: AllContributesComponent },
       { path: 'my-contributes', component: MyContributesComponent },
       { path: 'contribute', component: ContributeComponent },

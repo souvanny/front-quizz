@@ -41,3 +41,22 @@ a {
     border-radius: 5px;
 }
 
+
+
+
+#common-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+#common-table th,
+#common-table td {
+    font-size: 10px;
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+#common-table th.actions,
+#common-table td.actions {
+    text-align: right;
+}
