@@ -12,6 +12,8 @@ import { AllContributesComponent } from './screens/all-contributes/all-contribut
 import { AccountComponent } from './screens/account/account.component';
 import { AccountEditComponent } from './screens/account-edit/account-edit.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CoursesComponent } from './screens/courses/courses.component';
+import { ContributeDetailsComponent } from './screens/contribute-details/contribute-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     AllContributesComponent,
     AccountComponent,
     AccountEditComponent,
-    HomeComponent
+    HomeComponent,
+    CoursesComponent,
+    ContributeDetailsComponent
 
   ],
   imports: [
@@ -34,6 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
       { path: 'all-contributes', component: AllContributesComponent },
       { path: 'my-contributes', component: MyContributesComponent },
       { path: 'contribute', component: ContributeComponent },
+      { path: 'contribute-details', component: ContributeDetailsComponent },
+      { path: 'courses', component: CoursesComponent },
       { path: 'account', component: AccountComponent },
       { path: 'account-edit', component: AccountEditComponent },
     ])

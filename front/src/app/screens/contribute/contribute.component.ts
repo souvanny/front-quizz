@@ -30,18 +30,50 @@ export class ContributeComponent implements OnInit {
     console.log(this.answers);
     console.log("typeChoice : ", this.typeChoice);
 
-    this.http.post<any>('http://localhost:8080/api/quizz',
-      {
-          question: this.question,
-          typeChoice: this.typeChoice,
-          answers: this.answers,
-        }).subscribe(data => {
+    // this.http.post<any>('http://localhost:8080/api/questions',
+    //   {
+    //       question: this.question,
+    //       typeChoice: this.typeChoice,
+    //       answers: this.answers,
+    //     }).subscribe(data => {
+    //     console.log("Post done");
+
+    //     this.question = "";
+    //     this.typeChoice = "1";
+    //     this.answers = [];
+    // });
+
+    this.http.post<any>('http://localhost:8080/api/questions',
+            {
+              user: {
+                  id: 1,
+                  enabled: true,
+                  password: "rvrverv",
+                  provider: "lo",
+                  username: "john"
+              },
+              typeChoice: "MULTIPLE",
+              title: "Ma question 2",
+              answer: [
+                  {
+                      title: "Réponse 1"
+                  },
+                  {
+                      title: "Réponse 2"
+                  }
+              ],
+              dateCreated: "2023-05-17",
+              hashtags: "tag1"
+          }
+
+        ).subscribe(data => {
         console.log("Post done");
 
         this.question = "";
         this.typeChoice = "1";
         this.answers = [];
-    })
+    });
+
 
   }
 

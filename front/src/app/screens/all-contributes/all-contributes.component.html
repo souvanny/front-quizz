@@ -1,6 +1,21 @@
-<h3>Toutes les conttributions</h3>
+<h3 class="page-title">Toutes les contributions</h3>
 
+<div id="no-answer" *ngIf="questions.length === 0">Aucune contribution à valider</div>
+<table id="common-table" *ngIf="questions.length !== 0">
+  <thead>
+    <th>Num</th>
+    <th>Username</th>
+    <th>Libellé</th>
+    <th class="actions">Actions</th>
+  </thead>
+  <tr *ngFor="let question of questions; let i = index" class="answer">
+    <td>{{ i + 1 }}</td>
+    <td>{{ question.username }}</td>
+    <td>{{ question.title }}</td>
+    <td class="actions">
+      <button class="button-grey">Détails</button>
+    </td>
+  </tr>
 
-<div *ngFor="let question of questions; let i = index" class="question">
-  <div>Question {{ i + 1 }} : {{ question.title }}</div>
-</div>
+</table>
+

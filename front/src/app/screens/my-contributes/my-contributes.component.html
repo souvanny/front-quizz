@@ -1,1 +1,21 @@
-<p>my-contributes works!</p>
+<h3 class="page-title">Mes contributions</h3>
+
+<div id="no-answer" *ngIf="questions.length === 0">Aucune contribution à valider</div>
+<table id="common-table" *ngIf="questions.length !== 0">
+  <thead>
+    <th>Num</th>
+    <th>Username</th>
+    <th>Libellé</th>
+    <th class="actions">Actions</th>
+  </thead>
+  <tr *ngFor="let question of questions; let i = index" class="answer">
+    <td>{{ i + 1 }}</td>
+    <td>{{ question.username }}</td>
+    <td>{{ question.title }}</td>
+    <td class="actions">
+      <button class="button-grey">Détails</button>
+    </td>
+  </tr>
+
+</table>
+

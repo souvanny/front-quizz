@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent {
 
-  lastContribs:  { index: number, title: String }[] = [];
+  questions:  { index: number, id: number, title: String, username: String }[] = [];
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
-    console.log("VVVVVVVVVVVVVVVV");
+    console.log("HomeComponent init ============");
     this.loadData();
   }
 
@@ -24,14 +25,23 @@ export class HomeComponent {
       console.log(data);
 
       for (let i = 0; i< data.length; i++) {
-        this.lastContribs.push({
+        let row = data[i];
+        console.log(row);
+        this.questions.push({
           index: i,
-          title: "aaa"
+          id: row.id,
+          title: row.title,
+          username: row.user.username
         });
       }
+      console.log("==");
+      console.log(this.questions);
 
-  })
+     })
   }
 
-
+  btnClick(idQuestion: number) {
+    console.log("btnClick ...", idQuestion);
+    this.router.navigateByUrl('/contribute-details?idQuestion=' + idQuestion);
+  }
 }
