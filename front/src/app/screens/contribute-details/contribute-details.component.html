@@ -1,1 +1,65 @@
-<p>contribute-details works!</p>
+<h3 class="page-title">Détails d'une contribution</h3>
+
+<b>Questions</b>
+
+<br/>
+<br/>
+
+<p>
+    <button class="button-grey">Valider la question</button>
+</p>
+
+<div class="label-title">
+  Énoncé de la question
+</div>
+<div>
+    {{ title }}
+</div>
+
+<div class="label-title">
+  Hastags
+</div>
+<div>
+    {{ hashtags }}
+</div>
+
+
+<br/>
+<br/>
+
+<b>Réponses</b>
+
+<br/>
+<br/>
+
+<div id="no-answer" *ngIf="answers.length === 0">Veuillez saisir une réponse</div>
+<table id="common-table" *ngIf="answers.length !== 0">
+  <thead>
+    <th>Num</th>
+    <th>Libellé</th>
+    <th>Bonne réponse</th>
+  </thead>
+  <tr *ngFor="let answer of answers; let i = index" class="answer">
+    <td>{{ i + 1 }}</td>
+    <td>{{ answer.title }}</td>
+    <td>
+    </td>
+  </tr>
+
+</table>
+
+
+
+
+<div class="new-answer">
+  <!-- <div><input type="text" size="50" [(ngModel)]="newAnswer" class="code-input" /></div> -->
+  <div>
+    <!-- <button (click)="addAnswer()" class="button-grey">Ajouter la réponse</button> -->
+  </div>
+</div>
+
+
+<div class="btn-validate-quizz">
+  <!-- <button (click)="validateQuizz()" class="button-grey">Valider la question</button> -->
+</div>
+
